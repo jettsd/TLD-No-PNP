@@ -9,13 +9,7 @@ namespace NoPissNShit
         [HarmonyPatch("ConvWaterToPiss")]
         public static void Postfix(global::survivalscript __instance)
         {
-            foreach (mainscript.fluid fluid2 in __instance.player.piss.Tank.F.fluids)
-            {
-                if (fluid2.type == mainscript.fluidenum.water)
-                {
-                    fluid2.amount = 0;
-                }
-            }
+            __instance.player.piss.Tank.F.fluids.Clear();
 
         }
 
